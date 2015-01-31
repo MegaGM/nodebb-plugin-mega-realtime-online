@@ -1,7 +1,7 @@
 {
 	"name": "nodebb-plugin-mega-realtime-online",
 	"version": "0.0.1",
-	"description": "Fix that force client-side NodeBB to ping server-side every 59 seconds",
+	"description": "Mega Fix that force client-side NodeBB to ping server-side every 59 seconds",
 	"main": "library.js",
 	"nbbpm": {
 		"compatibility": "^0.6.0"
