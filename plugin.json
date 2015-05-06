@@ -1,4 +1,3 @@
-
 {
 	"id": "nodebb-plugin-mega-realtime-online",
 	"name": "Mega Fix that force client-side NodeBB to ping server-side every 59 seconds",
@@ -6,7 +5,8 @@
 	"scripts": [
 		"clientside.js"
 	],
-	"hooks": [
-		{ "hook": "static:app.load", "method": "init" }
-	]
+	"hooks": [{
+		"hook": "static:app.load",
+		"method": "init"
+	}]
 }
