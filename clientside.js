@@ -5,8 +5,8 @@
 
 $(document).ready(function() {
 	app.pingOnline = function() {
-		socket.emit('modules.pingOnline', {client: 'meow'}, function() {
-			console.log('socket.emit.pingOnline args: ', arguments);
+		socket.emit('plugins.pingOnline', {}, function(err, data) {
+			if (err) return console.log('nodebb-plugin-mega-realtime-online has been just stopped');
 			setTimeout(app.pingOnline, 3 * 1000);
 		});
 	};

@@ -8,27 +8,28 @@
 
 	var db = require.main.require('./src/database'),
 		user = require.main.require('./src/user'),
+		SocketPlugins = require.main.require('./src/socket.io/plugins'),
 		SocketModules = require.main.require('./src/socket.io/modules');
 
 	var Plugin = {
 		init: function(params, callback) {
 
-			SocketModules.pingOnline = function(socket, data, callback) {
-				console.log('SocketModules.pingOnline', data, socket.uid);
+			SocketPlugins.pingOnline = function(socket, data, callback) {
+				console.log('SocketPlugins.pingOnline', data, socket.uid);
 				if (!socket.uid) return;
 
-				var callbackFix = function() {},
-					now = Date.now();
+				var now = Date.now(),
+					callbackFix = function() {};
 
 				(function(socket) {
 					user.getUserFields(socket.uid, ['status', 'lastonline'], function(err, userData) {
-						if (err || userData.status === 'offline') return;
+						if (err || userData.status === 'offline') return callback(true, 'an error occured');
 
 						user.setUserField(socket.uid, 'lastonline', now, function(err) {
-							if (err) return;
+							if (err) return callback(true, 'an error occured');
 							db.sortedSetAdd('users:online', now, socket.uid, function(err) {
-								if (err) return;
-								callback('suka');
+								if (err) return callback(true, 'an error occured');
+								callback(null, 'no errors');
 							});
 						});
 					});
