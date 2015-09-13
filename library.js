@@ -15,7 +15,7 @@
 		init: function(params, callback) {
 
 			SocketPlugins.pingOnline = function(socket, data, callback) {
-				console.log('SocketPlugins.pingOnline', data, socket.uid);
+				// console.log('SocketPlugins.pingOnline', data, socket.uid);
 				if (!socket.uid) return;
 
 				var now = Date.now(),
