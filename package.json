@@ -1,14 +1,14 @@
 {
-  "name": "nodebb-plugin-mega-realtime-online",
-  "version": "0.0.8",
-  "nbbpm": {
-    "compatibility": "^0.7.1 || ^0.8.0"
-  },
-  "description": "Mega Fix that force client-side NodeBB to ping server-side every 59 seconds",
-  "main": "library.js",
-  "readme": "ERROR: No README data found!",
-  "scripts": {},
-  "dependencies": {
-    "bluebird": "^3.4.1"
-  }
+	"name": "nodebb-plugin-mega-realtime-online",
+	"version": "0.0.8",
+	"nbbpm": {
+		"compatibility": "^0.7.1 || ^0.8.0 || ^0.9.0 || ^1.0.0"
+	},
+	"description": "Mega Fix that force client-side NodeBB to ping server-side every 59 seconds",
+	"main": "library.js",
+	"readme": "ERROR: No README data found!",
+	"scripts": {},
+	"dependencies": {
+		"bluebird": "^3.4.1"
+	}
 }
