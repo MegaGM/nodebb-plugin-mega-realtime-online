@@ -7,5 +7,8 @@
   "description": "Mega Fix that force client-side NodeBB to ping server-side every 59 seconds",
   "main": "library.js",
   "readme": "ERROR: No README data found!",
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "bluebird": "^3.4.1"
+  }
 }
