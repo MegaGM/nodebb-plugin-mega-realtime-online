@@ -8,7 +8,7 @@ $(document).ready(function () {
 		socket.emit('plugins.ping', {}, function (err, data) {
 			if (err) return console.log(err);
 			// if (err) return console.log('realtime-online stopped', err);
-			setTimeout(app.ping, 2 * 1000);
+			setTimeout(app.ping, 59 * 1000);
 		});
 	};
 	app.ping();
